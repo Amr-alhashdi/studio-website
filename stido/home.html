@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أركان استوديو | للإنتاج الفني والصوتي الاحترافي</title>
+  <meta name="description" content="أركان استوديو - من رواد الإنتاج المرئي والصوتي في الوطن العربي. نقدم خدمات التصوير السينمائي، وهندسة الصوت، وإنتاج الإعلانات بأعلى جودة.">
+  <meta name="keywords" content="استوديو تصوير, إنتاج صوتي, تصوير سينمائي, تسجيل عود, هندسة صوتية, إعلانات, الرياض">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="أركان استوديو | للإنتاج الفني والصوتي الاحترافي">
+  <meta property="og:description" content="نصنع لك بصمة بصرية وصوتية فريدة تدوم طويلاً. استعرض أعمالنا الفنية الآن.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200">
+  <meta property="og:type" content="website">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="header glass">
+    <div class="header__logo" onclick="navigateTo('index.html')">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2L2 22h20L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
+      </svg>
+      <span>أركان</span>
+    </div>
+    
+    <div class="header__search">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input type="text" placeholder="ابحث عن عمل فني...">
+    </div>
+
+    <div class="header__actions">
+      <div class="icon-btn" onclick="alert('لا توجد إشعارات جديدة حالياً.')">
+        <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+        <span class="badge"></span>
+      </div>
+      <button class="btn-admin" onclick="navigateTo('admin/login.html')">
+        <svg viewBox="0 0 24 24" style="width:16px; height:16px; fill:currentColor;"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        الإدارة
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero__bg">
+      <!-- Unsplash Premium placeholder representing luxury studio background -->
+      <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1600&q=80" alt="Arkan Studio Background">
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <svg class="hero__logo" viewBox="0 0 24 24">
+        <path d="M12 2L2 22h20L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
+      </svg>
+      <h1 class="hero__title">أركان استوديو</h1>
+      <p class="hero__tagline">نصنع لك إرثاً بصرياً وجمالاً صوتياً يلامس الوجدان. أفضل تقنيات الإنتاج والإخراج السينمائي والهندسة الصوتية في الوطن العربي.</p>
+      <div class="hero__actions">
+        <button class="btn btn--primary" onclick="navigateTo('portfolio.html')">
+          استعرض أعمالنا
+          <svg viewBox="0 0 24 24" style="width:20px; height:20px; fill:currentColor;"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </button>
+        <button class="btn btn--secondary" onclick="navigateTo('contact.html')">احجز موعداً الآن</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats" id="stats-section">
+    <div class="stats__grid">
+      <div class="stat-card glass">
+        <svg class="stat-card__icon" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+        <div class="stat-card__number" data-target="250" data-suffix="+">0</div>
+        <div class="stat-card__label">مشروع منجز</div>
+      </div>
+      <div class="stat-card glass">
+        <svg class="stat-card__icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        <div class="stat-card__number" data-target="180" data-suffix="+">0</div>
+        <div class="stat-card__label">عميل سعيد</div>
+      </div>
+      <div class="stat-card glass">
+        <svg class="stat-card__icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm3.3 14.79L11 14V7h1.5v5.25l3.22 1.92-.73 1.22-0.2.4z"/></svg>
+        <div class="stat-card__number" data-target="10" data-suffix="+">0</div>
+        <div class="stat-card__label">سنوات الخبرة</div>
+      </div>
+      <div class="stat-card glass">
+        <svg class="stat-card__icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+        <div class="stat-card__number" data-target="15" data-suffix="+">0</div>
+        <div class="stat-card__label">جائزة محلية وعالمية</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase / Services Quick Grid -->
+  <section class="services">
+    <div class="section-header">
+      <span class="section-header__subtitle">خدماتنا الفاخرة</span>
+      <h2 class="section-header__title">ما الذي نقدمه لشركاء النجاح؟</h2>
+    </div>
+    <div class="services__grid">
+      <div class="service-card glass">
+        <svg class="service-card__icon" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+        <h3 class="service-card__title">التصوير الفوتوغرافي</h3>
+        <p class="service-card__desc">جلسات تصوير مخصصة للمنتجات، الأعراس، البورتريه، والمواقع السياحية بعدسات ومعدات فائقة الدقة.</p>
+      </div>
+      <div class="service-card glass">
+        <svg class="service-card__icon" viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+        <h3 class="service-card__title">إنتاج الفيديو والإعلانات</h3>
+        <p class="service-card__desc">صناعة إعلانات تجارية سينمائية، أفلام وثائقية، وتغطية الفعاليات والمؤتمرات بأحدث تقنيات المونتاج وتصحيح الألوان.</p>
+      </div>
+      <div class="service-card glass">
+        <svg class="service-card__icon" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+        <h3 class="service-card__title">الهندسة والإنتاج الصوتي</h3>
+        <p class="service-card__desc">تسجيل أغانٍ، معزوفات، بودكاست، تعليق صوتي إعلاني في غرف معزولة مع هندسة صوتية وتوزيع احترافي.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Bottom Navigation -->
+  <nav class="bottom-nav glass">
+    <div class="bottom-nav__item active" onclick="navigateTo('index.html')">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      الرئيسية
+    </div>
+    <div class="bottom-nav__item" onclick="navigateTo('portfolio.html')">
+      <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+      الأعمال
+    </div>
+    <div class="bottom-nav__item" onclick="navigateTo('audio.html')">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14H11V7h2v9z"/></svg>
+      الصوتيات
+    </div>
+    <div class="bottom-nav__item" onclick="navigateTo('services.html')">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+      الخدمات
+    </div>
+    <div class="bottom-nav__item" onclick="navigateTo('about.html')">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+      المزيد
+    </div>
+  </nav>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
