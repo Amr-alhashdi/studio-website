@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تفاصيل العمل | أركان استوديو</title>
+  <meta name="description" content="عرض تفاصيل ومحتوى العمل الإبداعي من أركان استوديو. شاهد أو استمع للعمل الفني بالتفصيل.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .work-detail-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .work-detail-media {
+      background: #000;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    }
+    .work-detail-media img, .work-detail-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .work-detail-content {
+      background: var(--color-surface);
+      border-radius: 24px;
+      padding: 40px;
+      border: 1px solid var(--glass-border);
+    }
+    .work-detail-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+    .work-detail-desc {
+      font-size: 1.1rem;
+      color: var(--color-text-muted);
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+    .work-detail-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      border-top: 1px solid var(--glass-border);
+      padding-top: 25px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="header glass">
+    <div class="header__logo" onclick="navigateTo('index.html')">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2L2 22h20L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
+      </svg>
+      <span>أركان</span>
+    </div>
+    
+    <div class="header__search">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input type="text" placeholder="ابحث عن عمل فني...">
+    </div>
+
+    <div class="header__actions">
+      <button class="btn-admin" onclick="navigateTo('admin/login.html')">
+        <svg viewBox="0 0 24 24" style="width:16px; height:16px; fill:currentColor;"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        الإدارة
+      </button>
+    </div>
+  </header>
+
+  <!-- Work Detail Section -->
+  <div class="work-detail-container">
+    <div class="work-detail-media" id="detail-media-container">
+      <!-- Media Injected by JS -->
+    </div>
+
+    <div class="work-detail-content">
+      <h1 class="work-detail-title" id="detail-title">تحميل...</h1>
+      <p class="work-detail-desc" id="detail-desc">يرجى الانتظار...</p>
+      
+      <div class="work-detail-meta">
+        <div>
+          <div class="modal__meta-label">التصنيف</div>
+          <div class="modal__meta-value" id="detail-type">-</div>
+        </div>
+        <div>
+          <div class="modal__meta-label">تاريخ النشر</div>
+          <div class="modal__meta-value" id="detail-date">-</div>
+        </div>
+        <div>
+          <div class="modal__meta-label">عدد المشاهدات</div>
+          <div class="modal__meta-value" id="detail-views">-</div>
+        </div>
+        <div>
+          <button class="btn btn--primary" onclick="alert('للحجز أو الاستفسار عن هذا العمل يرجى التواصل معنا.')">طلب عمل مشابه</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Bottom Navigation -->
+  <nav class="bottom-nav glass">
+    <div class="bottom-nav__item" onclick="navigateTo('index.html')">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      الرئيسية
+    </div>
+    <div class="bottom-nav__item active" onclick="navigateTo('portfolio.html')">
+      <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+      الأعمال
+    </div>
+    <div class="bottom-nav__item" onclick="navigateTo('audio.html')">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14H11V7h2v9z"/></svg>
+      الصوتيات
+    </div>
+    <div class="bottom-nav__item" onclick="navigateTo('services.html')">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+      الخدمات
+    </div>
+    <div class="bottom-nav__item" onclick="navigateTo('about.html')">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+      المزيد
+    </div>
+  </nav>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get("id");
+      const works = ArkanData.getWorks();
+      const work = works.find(w => w.id === id);
+
+      if (!work) {
+        document.getElementById("detail-title").textContent = "العمل غير موجود";
+        document.getElementById("detail-desc").textContent = "عذراً، لم نتمكن من العثور على العمل المطلوب.";
+        return;
+      }
+
+      document.title = `${work.title} | أركان استوديو`;
+      document.getElementById("detail-title").textContent = work.title;
+      document.getElementById("detail-desc").textContent = work.desc;
+      document.getElementById("detail-date").textContent = work.date;
+      document.getElementById("detail-views").textContent = `${work.views || 0} مشاهدة`;
+      document.getElementById("detail-type").textContent = { photo: "فوتوغرافي", video: "مرئي", audio: "صوتي" }[work.type] || work.type;
+
+      const mediaContainer = document.getElementById("detail-media-container");
+      if (work.type === "photo") {
+        mediaContainer.innerHTML = `<img src="${work.media}" alt="${work.title}">`;
+      } else if (work.type === "video") {
+        mediaContainer.innerHTML = `<video controls autoplay style="width:100%; height:100%;"><source src="${work.media}" type="video/mp4"></video>`;
+      } else if (work.type === "audio") {
+        mediaContainer.innerHTML = `
+          <div style="text-align:center; padding: 20px;">
+            <img src="${work.cover}" style="width:150px; height:150px; border-radius:12px; margin-bottom:15px; border:1px solid var(--color-border);">
+            <audio controls autoplay style="width:100%; max-width:400px;"><source src="${work.media}" type="audio/mp3"></audio>
+          </div>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>

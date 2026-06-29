@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المشغل الموسيقي والصوتيات | أركان استوديو</title>
+  <meta name="description" content="استمع إلى إنتاجنا الصوتي من معزوفات موسيقية، تعليق صوتي، وأناشيد بأعلى نقاء وجودة صوتية مع مشغلنا الاحترافي.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="audio-player-page">
+
+  <!-- Top Navigation -->
+  <header class="header glass">
+    <div class="header__logo" onclick="navigateTo('index.html')">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2L2 22h20L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
+      </svg>
+      <span>أركان</span>
+    </div>
+    
+    <div class="header__search">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input type="text" placeholder="ابحث عن عمل فني...">
+    </div>
+
+    <div class="header__actions">
+      <div class="icon-btn" onclick="alert('لا توجد إشعارات جديدة حالياً.')">
+        <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+        <span class="badge"></span>
+      </div>
+      <button class="btn-admin" onclick="navigateTo('admin/login.html')">
+        <svg viewBox="0 0 24 24" style="width:16px; height:16px; fill:currentColor;"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        الإدارة
+      </button>
+    </div>
+  </header>
+
+  <!-- Audio Section -->
+  <section class="audio-section">
+    <div class="section-header">
+      <span class="section-header__subtitle">الإنتاج الصوتي</span>
+      <h1 class="section-header__title">مشغل الصوتيات الاحترافي</h1>
+    </div>
+
+    <div class="audio-container">
+      <!-- Left side: Player -->
+      <div class="player-main">
+        <img class="player-cover" id="player-cover-img" src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=600" alt="Cover">
+        <h2 class="player-title" id="player-track-title">تحميل...</h2>
+        <p class="player-artist" id="player-track-artist">يرجى الانتظار</p>
+
+        <!-- Progress bar -->
+        <div class="player-progress">
+          <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+          </div>
+          <div class="progress-time">
+            <span id="curr-time">0:00</span>
+            <span id="total-time">0:00</span>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="player-controls">
+          <!-- Prev -->
+          <button class="control-btn" onclick="prevTrack()">
+            <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+          </button>
+          <!-- Seek back 10s -->
+          <button class="control-btn" onclick="seekAudio(-10)">
+            <svg viewBox="0 0 24 24" style="width:20px; height:20px;"><path d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L3.2 8.2V14h5.8L6.7 11.7c1.5-1.4 3.5-2.2 5.8-2.2 4.4 0 8 3.6 8 8s-3.6 8-8 8v-2c3.3 0 6-2.7 6-6s-2.7-6-6-6z"/></svg>
+          </button>
+          <!-- Play / Pause -->
+          <button class="control-btn control-btn--play" id="play-btn" onclick="togglePlay()">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <!-- Seek forward 10s -->
+          <button class="control-btn" onclick="seekAudio(10)">
+            <svg viewBox="0 0 24 24" style="width:20px; height:20px;"><path d="M11.5 8c2.65 0 5.05 1 6.9 2.6L20.8 8.2V14h-5.8l2.3-2.3c-1.5-1.4-3.5-2.2-5.8-2.2-4.4 0-8 3.6-8 8s3.6 8 8 8v-2c-3.3 0-6-2.7-6-6s2.7-6-6-6z"/></svg>
+          </button>
+          <!-- Next -->
+          <button class="control-btn" onclick="nextTrack()">
+            <svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+          </button>
+        </div>
+
+        <!-- Volume -->
+        <div class="player-volume">
+          <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+          <div class="volume-slider">
+            <div class="volume-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Playlist -->
+      <div class="playlist">
+        <h3 class="playlist-title">قائمة التشغيل</h3>
+        <div id="audio-playlist">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Bottom Navigation -->
+  <nav class="bottom-nav glass">
+    <div class="bottom-nav__item" onclick="navigateTo('index.html')">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      الرئيسية
+    </div>
+    <div class="bottom-nav__item" onclick="navigateTo('portfolio.html')">
+      <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+      الأعمال
+    </div>
+    <div class="bottom-nav__item active" onclick="navigateTo('audio.html')">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14H11V7h2v9z"/></svg>
+      الصوتيات
+    </div>
+    <div class="bottom-nav__item" onclick="navigateTo('services.html')">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+      الخدمات
+    </div>
+    <div class="bottom-nav__item" onclick="navigateTo('about.html')">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+      المزيد
+    </div>
+  </nav>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

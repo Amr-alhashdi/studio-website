@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إدارة الأعمال والإعدادات | أركان استوديو</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .manage-tabs {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid var(--glass-border);
+      padding-bottom: 10px;
+    }
+    .manage-tab-btn {
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--color-text-muted);
+      border-bottom: 2px solid transparent;
+      transition: var(--transition);
+    }
+    .manage-tab-btn.active, .manage-tab-btn:hover {
+      color: var(--color-primary);
+      border-bottom-color: var(--color-primary);
+    }
+    .manage-section {
+      display: none;
+    }
+    .manage-section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="header glass" style="position: relative; margin-bottom: 30px; margin-top: 0;">
+    <div class="header__logo">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2L2 22h20L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
+      </svg>
+      <span>إدارة الأعمال</span>
+    </div>
+    <div class="header__actions">
+      <button class="btn btn--secondary" onclick="adminLogout()">تسجيل الخروج</button>
+    </div>
+  </header>
+
+  <!-- Admin Layout -->
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar glass">
+      <a href="dashboard.html" class="admin-nav-item">
+        <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+        نظرة عامة
+      </a>
+      <a href="manage.html" class="admin-nav-item active">
+        <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+        إدارة الأعمال
+      </a>
+      <a href="../index.html" class="admin-nav-item">
+        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        عرض الموقع
+      </a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-content">
+      <!-- Tabs -->
+      <div class="manage-tabs">
+        <div class="manage-tab-btn active" onclick="switchTab('works-tab')">الأعمال الفنية</div>
+        <div class="manage-tab-btn" onclick="switchTab('settings-tab')">إعدادات الموقع</div>
+      </div>
+
+      <!-- SECTION 1: WORKS MANAGEMENT -->
+      <div id="works-tab" class="manage-section active">
+        <div class="admin-section-header">
+          <h2 style="font-size: 1.4rem; font-weight: 800;">إدارة الأعمال الفنية</h2>
+          <button class="btn btn--primary" onclick="openWorkModalForm()">
+            + إضافة عمل جديد
+          </button>
+        </div>
+
+        <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 15px;">
+          💡 يمكنك <b>ترتيب الأعمال بالسحب والإفلات</b> للأسطر في الجدول أدناه، وسيتم حفظ الترتيب تلقائياً.
+        </p>
+
+        <!-- Works Table -->
+        <div class="admin-table-container">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>الغلاف</th>
+                <th>عنوان العمل</th>
+                <th>النوع</th>
+                <th>تاريخ الإضافة</th>
+                <th>المشاهدات</th>
+                <th>الإجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="admin-works-table">
+              <!-- Injected by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SECTION 2: SITE SETTINGS -->
+      <div id="settings-tab" class="manage-section">
+        <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 20px;">إعدادات الموقع العام وتفاصيل الاتصال</h2>
+        
+        <form class="contact__form" id="admin-settings-form" style="background: var(--color-surface); border: 1px solid var(--glass-border); padding: 30px;">
+          <div class="form-group">
+            <label for="settings-name">اسم الاستوديو</label>
+            <input type="text" id="settings-name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="settings-logo">نص الشعار (Logo Text)</label>
+            <input type="text" id="settings-logo" required>
+          </div>
+
+          <div class="form-group">
+            <label for="settings-phone">رقم الهاتف / الواتساب</label>
+            <input type="text" id="settings-phone" required>
+          </div>
+
+          <div class="form-group">
+            <label for="settings-email">البريد الإلكتروني للاستوديو</label>
+            <input type="email" id="settings-email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="settings-address">العنوان الجغرافي</label>
+            <input type="text" id="settings-address" required>
+          </div>
+
+          <div class="form-group">
+            <label for="settings-map">رابط خرائط جوجل (Embed Map URL)</label>
+            <input type="text" id="settings-map" placeholder="https://www.google.com/maps/embed?...">
+          </div>
+
+          <button type="submit" class="btn btn--primary" style="justify-content: center; width: 200px; margin-top: 10px;">
+            حفظ الإعدادات
+          </button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <!-- ADD / EDIT WORK MODAL FORM -->
+  <div class="modal" id="admin-form-modal" style="display: none;">
+    <div class="modal__close" onclick="closeWorkModalForm()">
+      <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="#FFF"/></svg>
+    </div>
+    <div class="modal__content admin-modal-content">
+      <h2 id="modal-form-title" style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary); margin-bottom: 20px;">تفاصيل العمل الفني</h2>
+      
+      <form id="admin-work-form" style="display: flex; flex-direction: column; gap: 20px; text-align: right;">
+        <div class="form-group">
+          <label for="work-title">عنوان العمل</label>
+          <input type="text" id="work-title" required placeholder="مثال: تصوير عطور نجد الفاخرة">
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="work-type">النوع الأساسي</label>
+            <select id="work-type" required style="padding: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 12px; color: inherit;">
+              <option value="photo" style="background:#111;">صورة</option>
+              <option value="video" style="background:#111;">فيديو</option>
+              <option value="audio" style="background:#111;">صوتيات</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="work-category">التصنيف الفرعي</label>
+            <select id="work-category" required style="padding: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 12px; color: inherit;">
+              <option value="weddings" style="background:#111;">أعراس</option>
+              <option value="events" style="background:#111;">حفلات</option>
+              <option value="ads" style="background:#111;">إعلانات</option>
+              <option value="products" style="background:#111;">منتجات</option>
+              <option value="nature" style="background:#111;">طبيعة</option>
+              <option value="audio" style="background:#111;">إنتاج صوتي</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="work-date">تاريخ العمل</label>
+            <input type="date" id="work-date" required>
+          </div>
+          <div class="form-group">
+            <label for="work-artist">اسم المؤدي / الفنان (للصوتيات)</label>
+            <input type="text" id="work-artist" placeholder="اختياري">
+          </div>
+        </div>
+
+        <!-- Cover Media Options -->
+        <div id="cover-media-section" style="border: 1px solid var(--color-border); padding: 15px; border-radius: 12px; display: flex; flex-direction: column; gap: 10px;">
+          <span id="cover-section-title" style="font-size: 0.9rem; font-weight: bold; color: var(--color-primary);">صورة الغلاف (أو صورة العمل)</span>
+          <div class="form-group">
+            <label for="work-cover-url">رابط الصورة مباشرة (أسرع وأخف)</label>
+            <input type="text" id="work-cover-url" placeholder="https://example.com/image.jpg">
+          </div>
+          <div class="form-group">
+            <label for="work-cover-file">أو ارفع ملف صورة من جهازك</label>
+            <input type="file" id="work-cover-file" accept="image/*" style="padding: 5px;">
+          </div>
+          <img id="cover-preview" src="" style="width: 80px; height: 80px; border-radius: 8px; object-fit: cover; display: none; margin-top: 5px; border:1px solid var(--color-border);">
+        </div>
+
+        <!-- Main Media Options -->
+        <div id="main-media-section" style="border: 1px solid var(--color-border); padding: 15px; border-radius: 12px; display: flex; flex-direction: column; gap: 10px;">
+          <span id="main-section-title" style="font-size: 0.9rem; font-weight: bold; color: var(--color-primary);">ملف العمل الرئيسي (فيديو أو صوت)</span>
+          <div class="form-group">
+            <label for="work-media-url">رابط الفيديو أو الصوت مباشرة (أسرع)</label>
+            <input type="text" id="work-media-url" placeholder="https://example.com/video.mp4">
+          </div>
+          <div class="form-group">
+            <label for="work-media-file">أو ارفع الملف من جهازك (صوت أو فيديو)</label>
+            <input type="file" id="work-media-file" accept="video/*,audio/*" style="padding: 5px;">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="work-desc">وصف وتفاصيل العمل</label>
+          <textarea id="work-desc" rows="3" required placeholder="اكتب تفاصيل العمل..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary" id="form-submit-btn" style="justify-content: center; width: 100%;">
+          إضافة العمل
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/admin.js"></script>
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll(".manage-section").forEach(sec => sec.classList.remove("active"));
+      document.querySelectorAll(".manage-tab-btn").forEach(btn => btn.classList.remove("active"));
+      
+      document.getElementById(tabId).classList.add("active");
+      
+      // Find the tab button that has onclick with the tabId
+      const targetBtn = Array.from(document.querySelectorAll(".manage-tab-btn")).find(btn => btn.getAttribute("onclick").includes(tabId));
+      if (targetBtn) targetBtn.classList.add("active");
+    }
+  </script>
+</body>
+</html>

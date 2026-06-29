@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>من نحن | أركان استوديو</title>
+  <meta name="description" content="تعرف على رؤيتنا ورسالتنا وفريق العمل المحترف في أركان استوديو، بالإضافة إلى المعدات المتقدمة التي نستخدمها لإنتاج محتوى استثنائي.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="header glass">
+    <div class="header__logo" onclick="navigateTo('index.html')">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2L2 22h20L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
+      </svg>
+      <span>أركان</span>
+    </div>
+    
+    <div class="header__search">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input type="text" placeholder="ابحث عن عمل فني...">
+    </div>
+
+    <div class="header__actions">
+      <div class="icon-btn" onclick="alert('لا توجد إشعارات جديدة حالياً.')">
+        <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+        <span class="badge"></span>
+      </div>
+      <button class="btn-admin" onclick="navigateTo('admin/login.html')">
+        <svg viewBox="0 0 24 24" style="width:16px; height:16px; fill:currentColor;"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        الإدارة
+      </button>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="about">
+    <div class="about__container">
+      <!-- Image Column -->
+      <div class="about__img">
+        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800" alt="Arkan Studio Team and Equipment" loading="lazy">
+      </div>
+
+      <!-- Content Column -->
+      <div class="about__content">
+        <span class="section-header__subtitle" style="display:inline-block; margin-bottom:10px;">قصتنا وهويتنا</span>
+        <h1 class="modal__title" style="font-size: 2.2rem; margin-bottom: 20px;">نحن نصنع الجودة الفنية</h1>
+        <p class="about__text">تأسس أركان استوديو ليكون منصة متكاملة تجمع بين الفن البصري الراقي والنقاء الصوتي الفريد. نؤمن بأن كل عمل فني هو قصة تستحق أن تروى بأفضل أسلوب وأعلى كفاءة ممكنة. يضم فريقنا نخبة من المخرجين والمصورين وفنيي الصوت الملتزمين بالتميز والابتكار.</p>
+
+        <!-- Vision and Mission Grid -->
+        <div class="about__boxes">
+          <div class="about-box">
+            <h3 class="about-box__title">رؤيتنا</h3>
+            <p class="about-box__desc">أن نكون الخيار الأول للإنتاج الفني والصوتي الفاخر في الشرق الأوسط، ونصنع هوية بصرية متميزة تعبر عن روح العصر.</p>
+          </div>
+          <div class="about-box">
+            <h3 class="about-box__title">رسالتنا</h3>
+            <p class="about-box__desc">تقديم حلول إنتاجية مبتكرة تتجاوز تطلعات عملائنا باستخدام أحدث التقنيات وأفضل المواهب الإبداعية.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team / Equipment / Extra Info -->
+  <section class="services" style="background: var(--color-bg);">
+    <div class="section-header">
+      <span class="section-header__subtitle">القدرات والاحترافية</span>
+      <h2 class="section-header__title">المعدات وبيئة العمل</h2>
+    </div>
+    <div class="services__grid">
+      <div class="service-card glass">
+        <h3 class="service-card__title" style="color: var(--color-primary);">غرف تسجيل معزولة</h3>
+        <p class="service-card__desc">استوديوهات صوتية مصممة بأحدث معايير العزل الصوتي والامتصاص لضمان تسجيل نقي خالٍ من أي تشويش.</p>
+      </div>
+      <div class="service-card glass">
+        <h3 class="service-card__title" style="color: var(--color-primary);">كاميرات سينمائية 8K</h3>
+        <p class="service-card__desc">نستخدم كاميرات RED وARRI Alexa المتطورة مع عدسات سينمائية فاخرة لالتقاط أدق التفاصيل والألوان.</p>
+      </div>
+      <div class="service-card glass">
+        <h3 class="service-card__title" style="color: var(--color-primary);">فريق عمل شغوف</h3>
+        <p class="service-card__desc">مهندسو صوت ومخرجون لديهم سنوات طويلة من الخبرة في العمل مع كبرى القنوات والشركات التجارية.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Bottom Navigation -->
+  <nav class="bottom-nav glass">
+    <div class="bottom-nav__item" onclick="navigateTo('index.html')">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      الرئيسية
+    </div>
+    <div class="bottom-nav__item" onclick="navigateTo('portfolio.html')">
+      <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+      الأعمال
+    </div>
+    <div class="bottom-nav__item" onclick="navigateTo('audio.html')">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14H11V7h2v9z"/></svg>
+      الصوتيات
+    </div>
+    <div class="bottom-nav__item" onclick="navigateTo('services.html')">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+      الخدمات
+    </div>
+    <div class="bottom-nav__item active" onclick="navigateTo('about.html')">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+      المزيد
+    </div>
+  </nav>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

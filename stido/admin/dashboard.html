@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة التحكم | أركان استوديو</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="header glass" style="position: relative; margin-bottom: 30px; margin-top: 0;">
+    <div class="header__logo">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2L2 22h20L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/>
+      </svg>
+      <span>لوحة التحكم</span>
+    </div>
+    
+    <div class="header__actions">
+      <button class="btn btn--secondary" onclick="adminLogout()">تسجيل الخروج</button>
+    </div>
+  </header>
+
+  <!-- Admin Layout -->
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar glass">
+      <a href="dashboard.html" class="admin-nav-item active">
+        <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+        نظرة عامة
+      </a>
+      <a href="manage.html" class="admin-nav-item">
+        <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+        إدارة الأعمال
+      </a>
+      <a href="../index.html" class="admin-nav-item">
+        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        عرض الموقع
+      </a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-content">
+      <div class="section-header" style="text-align: right; margin: 0;">
+        <span class="section-header__subtitle">مرحباً بك، المدير</span>
+        <h1 class="section-header__title">نظرة عامة على الإحصائيات</h1>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="dashboard-stats">
+        <div class="dashboard-stat">
+          <div class="dashboard-stat__title">الصور المضافة</div>
+          <div class="dashboard-stat__value" id="stat-photos-count">0</div>
+        </div>
+        <div class="dashboard-stat">
+          <div class="dashboard-stat__title">الفيديوهات المضافة</div>
+          <div class="dashboard-stat__value" id="stat-videos-count">0</div>
+        </div>
+        <div class="dashboard-stat">
+          <div class="dashboard-stat__title">الملفات الصوتية</div>
+          <div class="dashboard-stat__value" id="stat-audios-count">0</div>
+        </div>
+      </div>
+
+      <!-- Welcome Message -->
+      <div class="glass" style="padding: 30px; border-radius: 20px; border: 1px solid var(--color-border);">
+        <h2 style="color: var(--color-primary); font-size: 1.4rem; margin-bottom: 15px;">لوحة تحكم أركان استوديو الفاخرة</h2>
+        <p style="color: var(--color-text-muted); line-height: 1.8;">
+          من هنا يمكنك التحكم في كافة محتويات موقعك بشكل كامل وبكل سهولة. قم بالانتقال إلى صفحة <b>إدارة الأعمال</b> لإضافة صور أو فيديوهات أو ملفات صوتية جديدة، أو تعديل الأعمال الحالية وحذفها، أو تعديل إعدادات ومعلومات التواصل الخاصة بالموقع.
+        </p>
+        <button class="btn btn--primary" style="margin-top: 20px;" onclick="navigateTo('manage.html')">
+          انتقل لإدارة الأعمال الآن
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>
